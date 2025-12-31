@@ -24,13 +24,22 @@
 <div id="message">🎉 Happy New Year My Love, welcome to 2026 🎉
   <p>Sahithi"As we step into 2026, my heart is so full knowing that I get to spend it with you. I don’t just want this year or the next—I want every single year for the rest of our lives. You are my home and my future. I love you more than words can say, and I promise to stay by your side forever." </p> </div>
 
+<audio id="bg-music" preload="auto" loop>
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+    
 <script>
   function showMsg() {
     document.getElementById("message").classList.add("show");
     launchConfetti();
 
     const music = document.getElementById("bg-music");
-    music.play();
+    music.currentTime = 0;
+
+    music.play().catch(err => {
+      console.log("Audio blocked:", err);
+    });
   }
 
   function launchConfetti() {
@@ -52,17 +61,15 @@
 
 
 
+
 <div class="hearts"></div>
 
 <script src="hearts.js"></script>
 <div class="burst-hearts"></div>
-<audio id="bg-music" loop>
-    <source src="music.mp3" type="audio/mpeg">
-</audio>
-
 
 
 </body>
 </html>
+
 
 
