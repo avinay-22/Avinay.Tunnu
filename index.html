@@ -28,6 +28,11 @@
   function showMsg() {
     document.getElementById("message").classList.add("show");
     launchConfetti();
+
+    const music = document.getElementById("bg-music");
+    if (music.paused) {
+      music.play();
+    }
   }
 
   function launchConfetti() {
@@ -46,10 +51,17 @@
     }
   }
 </script>
+
 <div class="hearts"></div>
 
 <script src="hearts.js"></script>
 <div class="burst-hearts"></div>
+<audio id="bg-music" controls loop>
+    <source src="music.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+
 
 </body>
 </html>
+
